@@ -1,0 +1,20 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.dealer",
+    "name": "lead_submitted",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Captures the submission of the contact form.",
+  "type": "object",
+  "properties": {
+    "fullName": { "type": "string", "minLength": 1 },
+    "email": { "type": "string", "format": "email" },
+    "phone": { "type": ["string", "null"] },
+    "preferredCar": { "type": "string" },
+    "message": { "type": "string" }
+  },
+  "required": ["fullName", "email", "preferredCar"],
+  "additionalProperties": false
+}

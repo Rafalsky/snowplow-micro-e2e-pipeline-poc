@@ -1,0 +1,22 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.dealer",
+    "name": "car_detail_view",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Self-describing event that captures the details shown to the shopper for a specific car.",
+  "type": "object",
+  "properties": {
+    "carId": { "type": "string" },
+    "make": { "type": "string" },
+    "model": { "type": "string" },
+    "price": { "type": "number", "minimum": 0 },
+    "mileage": { "type": "integer", "minimum": 0 },
+    "year": { "type": "integer", "minimum": 1900 },
+    "vin": { "type": "string", "pattern": "^[A-HJ-NPR-Z0-9]{11,17}$" }
+  },
+  "required": ["carId", "make", "model", "price", "mileage", "year"],
+  "additionalProperties": false
+}

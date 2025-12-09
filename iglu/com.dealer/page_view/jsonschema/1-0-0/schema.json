@@ -1,0 +1,38 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.dealer",
+    "name": "page_view",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Represents a Snowplow-style page view emitted by the dealer website.",
+  "type": "object",
+  "properties": {
+    "pageId": {
+      "type": "string",
+      "description": "Identifier of the logical page (e.g. homepage, used-cars)."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Full URL that was viewed."
+    },
+    "referrer": {
+      "type": ["string", "null"],
+      "description": "Optional referrer URL.",
+      "format": "uri"
+    },
+    "pageCategory": {
+      "type": "string",
+      "description": "High level grouping of the page (home, listing, detail, contact, thank-you)."
+    },
+    "timestamp": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Client timestamp in milliseconds."
+    }
+  },
+  "required": ["pageId", "url", "pageCategory", "timestamp"],
+  "additionalProperties": false
+}

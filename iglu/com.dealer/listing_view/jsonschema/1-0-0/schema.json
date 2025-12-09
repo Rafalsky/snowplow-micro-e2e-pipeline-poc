@@ -1,0 +1,36 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.dealer",
+    "name": "listing_view",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Structured event describing when a listing of vehicles is loaded.",
+  "type": "object",
+  "properties": {
+    "listingId": {
+      "type": "string",
+      "description": "Identifier for the listing (e.g. used-cars)."
+    },
+    "itemsCount": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of vehicles rendered on the page."
+    },
+    "filters": {
+      "type": "object",
+      "description": "Any filters that were applied before rendering the listing.",
+      "additionalProperties": {
+        "type": ["string", "number", "boolean"]
+      }
+    },
+    "timestamp": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Client timestamp in milliseconds."
+    }
+  },
+  "required": ["listingId", "itemsCount", "timestamp"],
+  "additionalProperties": false
+}

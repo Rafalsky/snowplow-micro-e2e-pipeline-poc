@@ -1,0 +1,22 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.dealer",
+    "name": "purchase_intent",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Self-describing event triggered when the shopper clicks 'buy this car'.",
+  "type": "object",
+  "properties": {
+    "carId": { "type": "string" },
+    "make": { "type": "string" },
+    "model": { "type": "string" },
+    "price": { "type": "number", "minimum": 0 },
+    "intentType": { "type": "string", "enum": ["buy-now", "reserve"] },
+    "source": { "type": "string" },
+    "url": { "type": "string", "format": "uri" }
+  },
+  "required": ["carId", "make", "model", "price", "intentType", "source"],
+  "additionalProperties": false
+}
