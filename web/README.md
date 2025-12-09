@@ -1,4 +1,4 @@
-# dist/
+# web/
 
 This directory contains the **compiled production build** of the React application from:
 
@@ -13,6 +13,6 @@ If you need to modify the frontend:
    https://github.com/Rafalsky/rafalsky-motors
 2. Make changes in the React source code.
 3. Rebuild the project.
-4. Replace the contents of this `dist/` folder with the newly built output.
+4. Replace the contents of this `web/` folder with the newly built output.
 
 This folder exists only to provide a lightweight, static, production-ready frontend that can be served by Nginx inside this Snowplow tracking proof-of-concept environment.
